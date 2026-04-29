@@ -185,3 +185,5 @@ Thứ hai, về mặt **Accessibility (Trợ năng)**: Người khiếm thị s�
 **Ví dụ cụ thể**: Khi sử dụng thẻ `<button>` thay vì `<div class="button">`, trình duyệt tự động hỗ trợ tính năng focus bằng phím `Tab` và kích hoạt bằng phím `Enter`/`Space`. Với `<div>`, bạn phải viết thêm rất nhiều Javascript và `tabindex` để mô phỏng lại hành vi này, dễ sinh lỗi.
 
 **Trường hợp thực tế `<div>` vẫn phù hợp**: Khi bạn cần tạo các container chỉ để gom nhóm phần tử phục vụ cho mục đích dàn trang (layout) bằng CSS Flexbox/Grid, hoặc một wrapper background không mang ý nghĩa nội dung, thì `<div>` là lựa chọn chính xác.
+### Phần D - Quay video
+https://youtu.be/8DphnjtPS1Q
