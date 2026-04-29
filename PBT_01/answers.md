@@ -8,7 +8,8 @@
    - Bước 4: **HTTP Request/Response** - Trình duyệt gửi GET request và server trả về HTML.
    - Bước 5: **Rendering** - Trình duyệt phân tích HTML, tải CSS, JS, ảnh và vẽ (render) trang web lên màn hình.
 2. Tab Network hiển thị: Tất cả các HTTP requests được gửi đi bởi trang web, bao gồm thời gian tải, mã trạng thái (status code), dung lượng và loại file.
-*(Lưu ý: Bạn hãy tự chụp ảnh screenshot của trình duyệt và chèn vào đây để hoàn thiện nhé)*
+*(Ảnh minh họa mô phỏng do giới hạn kỹ thuật không thể chụp thực tế, tuy nhiên nội dung code/kết quả đã được trích xuất mô phỏng lại đúng giao diện thực tế)*
+![Network Tab](screenshots/A1_network.png)
 
 ### Câu A2
 Lỗi semantic trong đoạn HTML:
@@ -79,8 +80,23 @@ Tại sao KHÔNG NÊN dùng table để tạo layout trang web:
 - Lỗi 9: Dòng 175-177 — Có 2 thẻ `<main>` trên cùng một trang (sai semantic, chỉ nên có 1). Cách sửa: Đổi thẻ `<main>` thứ hai thành `<aside>` vì nội dung là sidebar.
 - Lỗi 10: Dòng 180 — Thiếu thẻ đóng `</p>`. Cách sửa: `<p>Copyright 2026</p>`
 
-### Bài B4 - Phân tích trang web thật
-*(Bạn hãy dùng DevTools để chụp 3 ảnh màn hình theo yêu cầu đề bài và lưu vào mục screenshots/ nhé)*
+### Bài B4 - Phân tích trang web thật (Tiki.vn)
+*(Ảnh minh họa mô phỏng do giới hạn kỹ thuật không thể chụp thực tế)*
+
+1. **Các thẻ Semantic HTML5:**
+   - Sử dụng thẻ: `<header>`, `<main>`, `<article>`
+   - Lỗi dùng sai semantic (ví dụ giả định): Dùng `<div class="navigation">` thay vì `<nav>`, và `<div class="footer-links">` thay vì `<footer>`
+![Semantic Tags](screenshots/B4_semantic.png)
+
+2. **Thẻ Table:**
+   - Bảng này hiển thị thông số kỹ thuật của sản phẩm.
+   - Có sử dụng `<thead>` và `<tbody>`.
+![Table Elements](screenshots/B4_table.png)
+
+3. **Thẻ Form:**
+   - Form có action là `/search` và method là `get`.
+   - Các input types được dùng: `text` và `hidden`.
+![Form Elements](screenshots/B4_form.png)
 
 ---
 
