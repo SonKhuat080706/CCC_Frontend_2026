@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation Test - Câu A2</title>
+    <style>
+        body { font-family: sans-serif; margin: 2rem; }
+        .case { border: 1px solid #ccc; padding: 1rem; margin-bottom: 1rem; border-radius: 5px; }
+        label { display: block; margin-bottom: 0.5rem; font-weight: bold; }
+        input { padding: 0.5rem; width: 100%; max-width: 300px; }
+        button { padding: 0.5rem 1rem; background: #007bff; color: white; border: none; cursor: pointer; }
+        button:hover { background: #0056b3; }
+        .note { color: #666; font-size: 0.9em; font-style: italic; }
+    </style>
+</head>
+<body>
+
+    <h1>Bài Test Validation - Câu A2</h1>
+    <p>Nhấn nút Submit ở từng form để xem trình duyệt báo lỗi validation như thế nào.</p>
+
+    <!-- Trường hợp 1 -->
+    <div class="case">
+        <form action="#" method="GET">
+            <label for="test1">Trường hợp 1: required (User để trống)</label>
+            <input type="text" id="test1" name="test1" required value="">
+            <p class="note">&lt;input type="text" required value=""&gt;</p>
+            <button type="submit">Submit TH1</button>
+        </form>
+    </div>
+
+    <!-- Trường hợp 2 -->
+    <div class="case">
+        <form action="#" method="GET">
+            <label for="test2">Trường hợp 2: type email (User gõ "abc")</label>
+            <input type="email" id="test2" name="test2" value="abc">
+            <p class="note">&lt;input type="email" value="abc"&gt;</p>
+            <button type="submit">Submit TH2</button>
+        </form>
+    </div>
+
+    <!-- Trường hợp 3 -->
+    <div class="case">
+        <form action="#" method="GET">
+            <label for="test3">Trường hợp 3: type number max (User gõ "15")</label>
+            <input type="number" id="test3" name="test3" min="1" max="10" value="15">
+            <p class="note">&lt;input type="number" min="1" max="10" value="15"&gt;</p>
+            <button type="submit">Submit TH3</button>
+        </form>
+    </div>
+
+    <!-- Trường hợp 4 -->
+    <div class="case">
+        <form action="#" method="GET">
+            <label for="test4">Trường hợp 4: pattern (User gõ "abc123")</label>
+            <input type="text" id="test4" name="test4" pattern="[0-9]{10}" value="abc123">
+            <p class="note">&lt;input type="text" pattern="[0-9]{10}" value="abc123"&gt;</p>
+            <button type="submit">Submit TH4</button>
+        </form>
+    </div>
+
+    <!-- Trường hợp 5 -->
+    <div class="case">
+        <form action="#" method="GET">
+            <label for="test5">Trường hợp 5: minlength (User gõ "123")</label>
+            <input type="password" id="test5" name="test5" minlength="8" value="123">
+            <p class="note">&lt;input type="password" minlength="8" value="123"&gt;</p>
+            <button type="submit">Submit TH5</button>
+        </form>
+    </div>
+
+</body>
+</html>
