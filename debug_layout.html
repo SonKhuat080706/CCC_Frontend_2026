@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Câu C1 — Debug CSS Layout</title>
+    <link rel="stylesheet" href="debug_layout.css">
+</head>
+<body>
+    <h1>Câu C1 — Debug CSS Layout</h1>
+
+    <!-- ===== BUG DEMO ===== -->
+    <section class="demo-section">
+        <h2>❌ Layout bị vỡ (Bug gốc)</h2>
+        <p class="description">
+            Container: 960px | Sidebar: 300px + padding 20px + border 1px = 342px | 
+            Content: 660px + padding 30px + border 1px = 722px | 
+            <strong>Tổng: 342 + 722 = 1064px > 960px → VỠ!</strong>
+        </p>
+        <div class="container bug-version">
+            <div class="sidebar">
+                <h3>Sidebar</h3>
+                <p>width: 300px</p>
+                <p>Thực tế: 342px</p>
+            </div>
+            <div class="content">
+                <h3>Content</h3>
+                <p>width: 660px</p>
+                <p>Thực tế: 722px</p>
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+    </section>
+
+    <!-- ===== FIX 1: border-box ===== -->
+    <section class="demo-section">
+        <h2>✅ Cách sửa 1: Dùng border-box</h2>
+        <p class="description">
+            Thêm <code>box-sizing: border-box</code> → width đã bao gồm padding + border.
+            Tổng: 300 + 660 = 960px ✓
+        </p>
+        <div class="container fix1-version">
+            <div class="sidebar">
+                <h3>Sidebar</h3>
+                <p>width: 300px (border-box)</p>
+                <p>Content thực: 258px</p>
+            </div>
+            <div class="content">
+                <h3>Content</h3>
+                <p>width: 660px (border-box)</p>
+                <p>Content thực: 598px</p>
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+    </section>
+
+    <!-- ===== FIX 2: Tính lại width ===== -->
+    <section class="demo-section">
+        <h2>✅ Cách sửa 2: Tính lại width (không dùng border-box)</h2>
+        <p class="description">
+            Sidebar: width = 258px → 258 + 40 + 2 = 300px |
+            Content: width = 598px → 598 + 60 + 2 = 660px |
+            Tổng: 300 + 660 = 960px ✓
+        </p>
+        <div class="container fix2-version">
+            <div class="sidebar">
+                <h3>Sidebar</h3>
+                <p>width: 258px (content-box)</p>
+                <p>Hiển thị: 300px</p>
+            </div>
+            <div class="content">
+                <h3>Content</h3>
+                <p>width: 598px (content-box)</p>
+                <p>Hiển thị: 660px</p>
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+    </section>
+</body>
+</html>

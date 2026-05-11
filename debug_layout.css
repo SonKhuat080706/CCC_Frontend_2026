@@ -1,0 +1,127 @@
+/* =============================================
+   Câu C1 — Debug CSS Layout
+   ============================================= */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    padding: 30px;
+    line-height: 1.6;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    color: #1a237e;
+    margin-bottom: 30px;
+}
+
+.demo-section {
+    background: #fff;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.demo-section h2 {
+    color: #0d47a1;
+    margin-bottom: 10px;
+}
+
+.description {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 15px;
+    padding: 10px;
+    background: #f5f5f5;
+    border-radius: 6px;
+}
+
+.description code {
+    background: #e0e0e0;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+    width: 960px;
+    margin: 0 auto;
+    border: 2px solid #333;
+    background: #fafafa;
+    overflow: hidden;
+}
+
+/* ===== BUG VERSION (content-box mặc định) ===== */
+.bug-version .sidebar {
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    float: left;
+    background-color: #ffebee;
+    min-height: 120px;
+}
+
+.bug-version .content {
+    width: 660px;
+    padding: 30px;
+    border: 1px solid #ccc;
+    float: left;
+    background-color: #fff3e0;
+    min-height: 120px;
+}
+
+/* ===== FIX 1: border-box ===== */
+.fix1-version .sidebar {
+    box-sizing: border-box;
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    float: left;
+    background-color: #e8f5e9;
+    min-height: 120px;
+}
+
+.fix1-version .content {
+    box-sizing: border-box;
+    width: 660px;
+    padding: 30px;
+    border: 1px solid #ccc;
+    float: left;
+    background-color: #e8f5e9;
+    min-height: 120px;
+}
+
+/* ===== FIX 2: Tính lại width (content-box) ===== */
+.fix2-version .sidebar {
+    /* box-sizing: content-box (mặc định) */
+    width: 258px;   /* 300 - 40 - 2 = 258 */
+    padding: 20px;
+    border: 1px solid #ccc;
+    float: left;
+    background-color: #e3f2fd;
+    min-height: 120px;
+}
+
+.fix2-version .content {
+    /* box-sizing: content-box (mặc định) */
+    width: 598px;   /* 660 - 60 - 2 = 598 */
+    padding: 30px;
+    border: 1px solid #ccc;
+    float: left;
+    background-color: #e3f2fd;
+    min-height: 120px;
+}
+
+/* ===== COMMON ===== */
+.sidebar h3, .content h3 {
+    margin-top: 0;
+    color: #1a237e;
+}
+
+.sidebar p, .content p {
+    margin: 4px 0;
+    font-size: 13px;
+    color: #555;
+}

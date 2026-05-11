@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Câu C2 — Cascade Puzzle Kiểm chứng</title>
+    <style>
+        /* === CSS từ đề bài === */
+        body { font-size: 16px; color: #333; }
+        .container { font-size: 14px; }
+        .card { color: blue; }
+        .card .title { font-size: 20px; }
+        .card p { color: inherit; }
+        #featured .title { color: red; }
+        .highlight { color: green !important; }
+
+        /* === Styling cho phần giải thích === */
+        .explanation {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            font-family: 'Segoe UI', sans-serif;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .explanation h2 {
+            color: #1a237e !important;
+            font-size: 22px !important;
+        }
+
+        .result-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        .result-table th, .result-table td {
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        .result-table thead tr {
+            background: #1a237e;
+            color: white;
+        }
+
+        .result-table tbody tr:nth-child(even) {
+            background: #f5f7fa;
+        }
+
+        .test-area {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            font-family: 'Segoe UI', sans-serif;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .test-area > h2 {
+            color: #1a237e !important;
+            font-size: 22px !important;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-area">
+        <h2>Câu C2 — Cascade Puzzle (HTML gốc từ đề bài)</h2>
+
+        <!-- HTML gốc từ đề bài -->
+        <div class="container">
+            <div class="card" id="featured">
+                <h2 class="title highlight">Sản phẩm A</h2>
+                <p>Mô tả sản phẩm</p>
+            </div>
+            <div class="card">
+                <h2 class="title">Sản phẩm B</h2>
+                <p class="highlight">Mô tả sản phẩm B</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="explanation">
+        <h2>Kết quả mong đợi:</h2>
+        <table class="result-table">
+            <thead>
+                <tr>
+                    <th>Element</th>
+                    <th>font-size</th>
+                    <th>color</th>
+                    <th>Giải thích color</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>"Sản phẩm A" (h2.title.highlight trong #featured)</td>
+                    <td>20px</td>
+                    <td style="color: green; font-weight: bold;">green</td>
+                    <td>.highlight { color: green !important } thắng mọi rule khác</td>
+                </tr>
+                <tr>
+                    <td>"Mô tả sản phẩm" (p trong #featured .card)</td>
+                    <td>inherited (14px từ .container)</td>
+                    <td style="color: blue; font-weight: bold;">blue</td>
+                    <td>.card p { color: inherit } → kế thừa từ .card → blue</td>
+                </tr>
+                <tr>
+                    <td>"Sản phẩm B" (h2.title)</td>
+                    <td>20px</td>
+                    <td style="color: blue; font-weight: bold;">blue</td>
+                    <td>Kế thừa color từ .card (blue), không có rule trực tiếp set color cho .title</td>
+                </tr>
+                <tr>
+                    <td>"Mô tả sản phẩm B" (p.highlight)</td>
+                    <td>inherited (14px từ .container)</td>
+                    <td style="color: green; font-weight: bold;">green</td>
+                    <td>.highlight { color: green !important } thắng .card p { color: inherit }</td>
+                </tr>
+            </tbody>
+        </table>
+        <p><em>Mở DevTools (F12) → Inspect từng element để xác minh.</em></p>
+        <p><em>[TODO: Chụp screenshot kết quả]</em></p>
+    </div>
+</body>
+</html>

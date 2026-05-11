@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài B2 — Box Model Lab</title>
+    <link rel="stylesheet" href="boxmodel.css">
+</head>
+<body>
+    <h1>Box Model Lab</h1>
+
+    <!-- ===== PHẦN 1: content-box vs border-box ===== -->
+    <section class="section">
+        <h2>Phần 1 — content-box vs border-box</h2>
+        <p class="description">Cả 2 hộp đều có <code>width: 300px; padding: 20px; border: 5px solid</code></p>
+
+        <div class="comparison">
+            <div class="box-wrapper">
+                <div class="box content-box">
+                    <strong>content-box</strong>
+                    <p>width: 300px</p>
+                    <p>Chiều rộng thực tế: <strong>350px</strong></p>
+                    <p>(300 + 20×2 + 5×2)</p>
+                </div>
+                <p class="box-label">box-sizing: content-box (mặc định)</p>
+            </div>
+
+            <div class="box-wrapper">
+                <div class="box border-box">
+                    <strong>border-box</strong>
+                    <p>width: 300px</p>
+                    <p>Chiều rộng thực tế: <strong>300px</strong></p>
+                    <p>Content: 250px</p>
+                </div>
+                <p class="box-label">box-sizing: border-box</p>
+            </div>
+        </div>
+
+        <div class="note">
+            <p><strong>📏 Hướng dẫn đo:</strong> Click chuột phải → Inspect → tab Computed → xem Box Model diagram</p>
+            <p><em>[TODO: Chụp screenshot DevTools Box Model diagram cho mỗi hộp]</em></p>
+        </div>
+    </section>
+
+    <!-- ===== PHẦN 2: Layout 3 cột ===== -->
+    <section class="section">
+        <h2>Phần 2 — Layout 3 cột (1000px)</h2>
+
+        <h3>✅ Với border-box (hoạt động đúng)</h3>
+        <p class="description">Tổng 3 cột = 250 + 500 + 250 = 1000px</p>
+        <div class="container-demo border-box-layout">
+            <div class="sidebar-left">
+                <strong>Sidebar</strong>
+                <p>250px</p>
+                <p>padding: 15px</p>
+            </div>
+            <div class="main-content">
+                <strong>Content</strong>
+                <p>500px</p>
+                <p>padding: 20px</p>
+            </div>
+            <div class="sidebar-right">
+                <strong>Ads</strong>
+                <p>250px</p>
+                <p>padding: 15px</p>
+            </div>
+        </div>
+
+        <h3>❌ Không có border-box (layout vỡ)</h3>
+        <p class="description">Tổng thực tế: (250+30) + (500+40) + (250+30) = 280 + 540 + 280 = 1100px → vượt 1000px!</p>
+        <div class="container-demo content-box-layout">
+            <div class="sidebar-left">
+                <strong>Sidebar</strong>
+                <p>250px</p>
+                <p>padding: 15px</p>
+            </div>
+            <div class="main-content">
+                <strong>Content</strong>
+                <p>500px</p>
+                <p>padding: 20px</p>
+            </div>
+            <div class="sidebar-right">
+                <strong>Ads</strong>
+                <p>250px</p>
+                <p>padding: 15px</p>
+            </div>
+        </div>
+        <div class="note">
+            <p><em>[TODO: Chụp screenshot so sánh 2 trường hợp]</em></p>
+        </div>
+    </section>
+</body>
+</html>
