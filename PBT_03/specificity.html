@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài B3 — Specificity Battle</title>
+    <link rel="stylesheet" href="specificity.css">
+</head>
+<body>
+    <h1>Specificity Battle</h1>
+
+    <div class="info">
+        <h2>Target Element:</h2>
+        <code>&lt;p id="demo" class="text highlight"&gt;Hello World&lt;/p&gt;</code>
+    </div>
+
+    <div class="demo-area">
+        <p id="demo" class="text highlight">Hello World</p>
+    </div>
+
+    <div class="info">
+        <h2>10 CSS Rules (từ thấp đến cao specificity):</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Selector</th>
+                    <th>Specificity</th>
+                    <th>Color</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td><code>*</code></td>
+                    <td>(0, 0, 0)</td>
+                    <td style="color: gray;">gray</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td><code>p</code></td>
+                    <td>(0, 0, 1)</td>
+                    <td style="color: brown;">brown</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td><code>.text</code></td>
+                    <td>(0, 1, 0)</td>
+                    <td style="color: blue;">blue</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td><code>.highlight</code></td>
+                    <td>(0, 1, 0)</td>
+                    <td style="color: cyan;">cyan</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td><code>p.text</code></td>
+                    <td>(0, 1, 1)</td>
+                    <td style="color: teal;">teal</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td><code>.text.highlight</code></td>
+                    <td>(0, 2, 0)</td>
+                    <td style="color: magenta;">magenta</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td><code>p.text.highlight</code></td>
+                    <td>(0, 2, 1)</td>
+                    <td style="color: orange;">orange</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td><code>#demo</code></td>
+                    <td>(1, 0, 0)</td>
+                    <td style="color: red;">red</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td><code>#demo.text</code></td>
+                    <td>(1, 1, 0)</td>
+                    <td style="color: purple;">purple</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td><code>#demo.text.highlight</code></td>
+                    <td>(1, 2, 0)</td>
+                    <td style="color: gold;">gold</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p class="result"><strong>Kết quả:</strong> Element hiển thị màu <strong style="color: gold;">gold</strong> — vì rule #10 có specificity cao nhất (1,2,0)</p>
+    </div>
+</body>
+</html>

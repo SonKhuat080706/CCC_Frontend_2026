@@ -1,0 +1,139 @@
+/* =============================================
+   Bài B3 — Specificity Battle
+   10 CSS Rules cùng target <p id="demo" class="text highlight">
+   Sắp xếp từ THẤP đến CAO theo specificity
+   ============================================= */
+
+/* === PAGE STYLING === */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    padding: 30px;
+    line-height: 1.6;
+}
+
+h1 {
+    text-align: center;
+    color: #1a237e;
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #0d47a1;
+    margin-bottom: 10px;
+}
+
+.info {
+    background: #fff;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.info code {
+    background: #e8e8e8;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 15px;
+}
+
+.demo-area {
+    background: #fff;
+    border-radius: 10px;
+    padding: 40px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.demo-area p {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th, td {
+    padding: 10px 15px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+thead tr {
+    background-color: #1a237e;
+    color: white;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f5f7fa;
+}
+
+tbody tr:hover {
+    background-color: #e3f2fd;
+}
+
+.result {
+    margin-top: 20px;
+    padding: 15px;
+    background: #e8f5e9;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+/* ===== 10 SPECIFICITY RULES ===== */
+/* Sắp xếp từ THẤP đến CAO */
+
+/* Rule 1: Universal selector — Specificity: (0,0,0) */
+* {
+    color: gray;
+}
+
+/* Rule 2: Element selector — Specificity: (0,0,1) */
+p {
+    color: brown;
+}
+
+/* Rule 3: Class selector — Specificity: (0,1,0) */
+.text {
+    color: blue;
+}
+
+/* Rule 4: Class selector — Specificity: (0,1,0) — sau rule 3 nên thắng nếu cùng specificity */
+.highlight {
+    color: cyan;
+}
+
+/* Rule 5: Element + Class — Specificity: (0,1,1) */
+p.text {
+    color: teal;
+}
+
+/* Rule 6: 2 Classes — Specificity: (0,2,0) */
+.text.highlight {
+    color: magenta;
+}
+
+/* Rule 7: Element + 2 Classes — Specificity: (0,2,1) */
+p.text.highlight {
+    color: orange;
+}
+
+/* Rule 8: ID selector — Specificity: (1,0,0) */
+#demo {
+    color: red;
+}
+
+/* Rule 9: ID + Class — Specificity: (1,1,0) */
+#demo.text {
+    color: purple;
+}
+
+/* Rule 10: ID + 2 Classes — Specificity: (1,2,0) — THẮNG */
+#demo.text.highlight {
+    color: gold;
+}

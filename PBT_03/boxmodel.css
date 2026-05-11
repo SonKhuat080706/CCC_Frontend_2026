@@ -1,0 +1,175 @@
+/* =============================================
+   Bài B2 — Box Model Lab
+   ============================================= */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    padding: 30px;
+    line-height: 1.6;
+}
+
+h1 {
+    text-align: center;
+    color: #1a237e;
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #0d47a1;
+    border-bottom: 2px solid #0d47a1;
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+}
+
+h3 {
+    color: #333;
+    margin: 20px 0 10px;
+}
+
+.section {
+    background: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.description {
+    color: #666;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.description code {
+    background: #e8e8e8;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* ===== PHẦN 1: content-box vs border-box ===== */
+
+.comparison {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    margin: 20px 0;
+}
+
+.box-wrapper {
+    text-align: center;
+}
+
+.box {
+    width: 300px;
+    padding: 20px;
+    border: 5px solid #1565c0;
+    background-color: #e3f2fd;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.box p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+/* Hộp 1: content-box (mặc định) */
+.content-box {
+    box-sizing: content-box;
+    border-color: #c62828;
+    background-color: #ffebee;
+}
+
+/* Hộp 2: border-box */
+.border-box {
+    box-sizing: border-box;
+    border-color: #2e7d32;
+    background-color: #e8f5e9;
+}
+
+.box-label {
+    font-size: 13px;
+    color: #666;
+    font-style: italic;
+}
+
+/* ===== PHẦN 2: Layout 3 cột ===== */
+
+.container-demo {
+    width: 1000px;
+    margin: 10px 0 20px;
+    overflow: hidden;
+    border: 2px solid #333;
+    background: #eee;
+}
+
+/* Layout với border-box */
+.border-box-layout .sidebar-left,
+.border-box-layout .main-content,
+.border-box-layout .sidebar-right {
+    box-sizing: border-box;
+    float: left;
+    min-height: 150px;
+}
+
+.border-box-layout .sidebar-left {
+    width: 250px;
+    padding: 15px;
+    background-color: #e8eaf6;
+}
+
+.border-box-layout .main-content {
+    width: 500px;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.border-box-layout .sidebar-right {
+    width: 250px;
+    padding: 15px;
+    background-color: #e8eaf6;
+}
+
+/* Layout KHÔNG có border-box (sẽ vỡ) */
+.content-box-layout .sidebar-left,
+.content-box-layout .main-content,
+.content-box-layout .sidebar-right {
+    box-sizing: content-box;
+    float: left;
+    min-height: 150px;
+}
+
+.content-box-layout .sidebar-left {
+    width: 250px;
+    padding: 15px;
+    background-color: #fce4ec;
+}
+
+.content-box-layout .main-content {
+    width: 500px;
+    padding: 20px;
+    background-color: #fff3e0;
+}
+
+.content-box-layout .sidebar-right {
+    width: 250px;
+    padding: 15px;
+    background-color: #fce4ec;
+}
+
+/* ===== NOTE ===== */
+
+.note {
+    background: #fff8e1;
+    border-left: 4px solid #ff8f00;
+    padding: 15px 20px;
+    margin-top: 20px;
+    border-radius: 0 6px 6px 0;
+    font-size: 14px;
+}
+
+.note p {
+    margin: 5px 0;
+}

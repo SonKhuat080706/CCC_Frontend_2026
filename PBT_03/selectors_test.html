@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Câu A2 — CSS Selectors Test</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .test-info {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        .test-info h3 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        .test-info code {
+            background: #e8e8e8;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .result-label {
+            display: inline-block;
+            background: #4CAF50;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            margin-left: 10px;
+        }
+
+        /* ===== HTML gốc từ đề bài ===== */
+
+        /* Selector 1: h1 → Chọn "ShopTLU" */
+        h1 {
+            outline: 3px solid red;
+            outline-offset: 2px;
+        }
+
+        /* Selector 2: .price → Chọn "25.990.000đ" và "45.990.000đ" */
+        .price {
+            background-color: yellow;
+        }
+
+        /* Selector 3: #app header → Chọn phần tử header */
+        #app header {
+            border: 3px dashed blue;
+        }
+
+        /* Selector 4: nav a:first-child → Chọn "Home" */
+        nav a:first-child {
+            background-color: lime;
+        }
+
+        /* Selector 5: .product.featured h2 → Chọn "MacBook Pro" */
+        .product.featured h2 {
+            text-decoration: underline;
+            color: purple;
+        }
+
+        /* Selector 6: article > p → Chọn tất cả <p> con trực tiếp của article */
+        article > p {
+            border-left: 4px solid orange;
+            padding-left: 8px;
+        }
+
+        /* Selector 7: a[href="/"] → Chọn "Home" */
+        a[href="/"] {
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        /* Selector 8: .top-bar.dark h1 → Chọn "ShopTLU" */
+        .top-bar.dark h1 {
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <h2>Câu A2 — Kiểm chứng CSS Selectors</h2>
+
+    <div class="test-info">
+        <h3>Chú thích hiệu ứng:</h3>
+        <ul>
+            <li><code>h1</code> → viền đỏ (outline)</li>
+            <li><code>.price</code> → nền vàng</li>
+            <li><code>#app header</code> → viền xanh dương nét đứt</li>
+            <li><code>nav a:first-child</code> → nền xanh lá</li>
+            <li><code>.product.featured h2</code> → gạch chân + chữ tím</li>
+            <li><code>article > p</code> → viền trái cam</li>
+            <li><code>a[href="/"]</code> → chữ đậm, cỡ lớn</li>
+            <li><code>.top-bar.dark h1</code> → chữ nghiêng</li>
+        </ul>
+    </div>
+
+    <hr>
+
+    <!-- HTML gốc từ đề bài -->
+    <div id="app">
+        <header class="top-bar dark">
+            <h1>ShopTLU</h1>
+            <nav>
+                <a href="/" class="active">Home</a>
+                <a href="/products">Products</a>
+                <a href="/about">About</a>
+            </nav>
+        </header>
+        <main>
+            <article class="product">
+                <h2>iPhone 16</h2>
+                <p class="price">25.990.000đ</p>
+                <p>Mô tả sản phẩm...</p>
+            </article>
+            <article class="product featured">
+                <h2>MacBook Pro</h2>
+                <p class="price">45.990.000đ</p>
+                <p>Mô tả sản phẩm...</p>
+            </article>
+        </main>
+    </div>
+</body>
+</html>
