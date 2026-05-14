@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Positioning Playground</title>
+    <link rel="stylesheet" href="positioning.css">
+</head>
+<body>
+
+    <header class="fixed-header">
+        <div class="logo">MY LOGO</div>
+        <nav>
+            <ul>
+                <li><a href="#">Trang chủ</a></li>
+                <li><a href="#">Sản phẩm</a></li>
+                <li><a href="#">Liên hệ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <aside class="sticky-sidebar">
+            <h3>Danh mục</h3>
+            <ul>
+                <li>Điện thoại</li>
+                <li>Laptop</li>
+                <li>Máy tính bảng</li>
+                <li>Phụ kiện</li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <h1>Sản phẩm mới nhất</h1>
+            <div class="product-grid">
+                <!-- Product Card -->
+                <div class="product-card">
+                    <span class="badge-hot">HOT</span>
+                    <img src="https://picsum.photos/200/200?random=1" alt="Sản phẩm">
+                    <h3>iPhone 15 Pro Max</h3>
+                    <p>Giá: 29.990.000đ</p>
+                </div>
+                <div class="product-card">
+                    <img src="https://picsum.photos/200/200?random=2" alt="Sản phẩm">
+                    <h3>MacBook Air M3</h3>
+                    <p>Giá: 27.500.000đ</p>
+                </div>
+                <div class="product-card">
+                    <span class="badge-hot">HOT</span>
+                    <img src="https://picsum.photos/200/200?random=3" alt="Sản phẩm">
+                    <h3>Apple Watch Ultra</h3>
+                    <p>Giá: 19.990.000đ</p>
+                </div>
+                <div class="product-card">
+                    <img src="https://picsum.photos/200/200?random=4" alt="Sản phẩm">
+                    <h3>iPad Pro M2</h3>
+                    <p>Giá: 21.000.000đ</p>
+                </div>
+            </div>
+            <!-- Dummy content for scrolling -->
+            <div style="height: 1000px; padding: 20px; background: #f0f0f0; margin-top: 20px;">
+                <p>Cuộn xuống để xem hiệu ứng Fixed Header và Sticky Sidebar...</p>
+            </div>
+        </main>
+    </div>
+
+    <button class="scroll-top" id="scrollTop">↑</button>
+
+</body>
+</html>

@@ -1,0 +1,159 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f1f5f9;
+}
+
+.grid-container {
+    display: grid;
+    /* Layout chính 3 cột */
+    grid-template-columns: 200px 1fr 200px;
+    grid-template-areas: 
+        "header header header"
+        "hero hero hero"
+        "sidebar main ads"
+        "footer footer footer";
+    gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Các vùng chính */
+.header {
+    grid-area: header;
+    background: #1e293b;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px;
+}
+
+.hero {
+    grid-area: hero;
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    color: white;
+    padding: 40px;
+    border-radius: 8px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Chia cột con trong hero */
+    gap: 20px;
+    align-items: center;
+}
+
+.hero-content {
+    grid-column: span 2; /* Chiếm 2 phần */
+}
+
+.featured-card {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.sidebar {
+    grid-area: sidebar;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.main {
+    grid-area: main;
+}
+
+.ads {
+    grid-area: ads;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.footer {
+    grid-area: footer;
+    background: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+/* Sub-grid cho Main Content */
+.product-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.p-card {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.p-card:hover {
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.p-card img {
+    width: 100%;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.ad-banner img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .grid-container {
+        grid-template-columns: 200px 1fr;
+        grid-template-areas: 
+            "header header"
+            "hero hero"
+            "sidebar main"
+            "footer footer";
+    }
+    .ads {
+        display: none; /* Ẩn quảng cáo trên màn hình vừa */
+    }
+}
+
+@media (max-width: 600px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "header"
+            "hero"
+            "main"
+            "sidebar"
+            "footer";
+    }
+    .hero {
+        grid-template-columns: 1fr;
+    }
+    .hero-content {
+        grid-column: span 1;
+    }
+}
