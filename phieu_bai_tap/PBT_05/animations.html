@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Demo các hiệu ứng CSS Transitions & Animations - Card hover, Button effects, Image zoom, Loading spinner, Fade-in">
+    <title>CSS Animations & Transitions Demo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="animations.css">
+</head>
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="page-header">
+        <h1 class="page-header__title">CSS Animations & Transitions</h1>
+        <p class="page-header__subtitle">Tổng hợp 5 hiệu ứng CSS quan trọng: Hover, Button, Zoom, Spinner, Fade-in</p>
+    </header>
+
+    <!-- ===== SECTION 1: Card Hover Effects ===== -->
+    <section class="section" id="card-hover">
+        <div class="section__header">
+            <span class="section__number">01</span>
+            <div>
+                <h2 class="section__title">Card Hover Effect</h2>
+                <p class="section__desc">Khi hover vào card: <code>transform: translateY(-8px)</code> + tăng <code>box-shadow</code></p>
+            </div>
+        </div>
+        <div class="cards-grid">
+            <article class="card">
+                <div class="card__img-wrapper">
+                    <img src="https://picsum.photos/300/250?random=10" alt="Laptop Gaming" class="card__img" loading="lazy">
+                </div>
+                <div class="card__content">
+                    <h3 class="card__title">Laptop Gaming Pro X1</h3>
+                    <p class="card__price">25.990.000₫</p>
+                    <button class="btn btn--buy">Mua ngay</button>
+                </div>
+            </article>
+            <article class="card">
+                <div class="card__img-wrapper">
+                    <img src="https://picsum.photos/300/250?random=11" alt="Tai nghe" class="card__img" loading="lazy">
+                </div>
+                <div class="card__content">
+                    <h3 class="card__title">Tai nghe Wireless Z9</h3>
+                    <p class="card__price">2.490.000₫</p>
+                    <button class="btn btn--buy">Mua ngay</button>
+                </div>
+            </article>
+            <article class="card">
+                <div class="card__img-wrapper">
+                    <img src="https://picsum.photos/300/250?random=12" alt="Smartwatch" class="card__img" loading="lazy">
+                </div>
+                <div class="card__content">
+                    <h3 class="card__title">Smartwatch Ultra S5</h3>
+                    <p class="card__price">6.790.000₫</p>
+                    <button class="btn btn--buy">Mua ngay</button>
+                </div>
+            </article>
+            <article class="card">
+                <div class="card__img-wrapper">
+                    <img src="https://picsum.photos/300/250?random=13" alt="Camera" class="card__img" loading="lazy">
+                </div>
+                <div class="card__content">
+                    <h3 class="card__title">Camera Action 4K</h3>
+                    <p class="card__price">4.290.000₫</p>
+                    <button class="btn btn--buy">Mua ngay</button>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 2: Button Hover Effects ===== -->
+    <section class="section" id="button-hover">
+        <div class="section__header">
+            <span class="section__number">02</span>
+            <div>
+                <h2 class="section__title">Button Hover Effects</h2>
+                <p class="section__desc">Đổi màu mượt mà + <code>transform: scale(1.05)</code> khi hover</p>
+            </div>
+        </div>
+        <div class="buttons-showcase">
+            <div class="button-demo">
+                <button class="btn btn--glow">Mua ngay</button>
+                <span class="button-label">Glow Effect</span>
+            </div>
+            <div class="button-demo">
+                <button class="btn btn--slide">Thêm vào giỏ</button>
+                <span class="button-label">Slide Background</span>
+            </div>
+            <div class="button-demo">
+                <button class="btn btn--border-anim">Xem chi tiết</button>
+                <span class="button-label">Border Animation</span>
+            </div>
+            <div class="button-demo">
+                <button class="btn btn--pulse">Đặt hàng</button>
+                <span class="button-label">Pulse Effect</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 3: Image Zoom ===== -->
+    <section class="section" id="image-zoom">
+        <div class="section__header">
+            <span class="section__number">03</span>
+            <div>
+                <h2 class="section__title">Image Zoom on Hover</h2>
+                <p class="section__desc">Container <code>overflow: hidden</code> — Ảnh <code>transform: scale(1.1)</code> khi hover</p>
+            </div>
+        </div>
+        <div class="zoom-grid">
+            <div class="zoom-item">
+                <div class="zoom-item__img-container">
+                    <img src="https://picsum.photos/400/300?random=20" alt="Product 1" class="zoom-item__img" loading="lazy">
+                    <div class="zoom-item__overlay">
+                        <span>Xem thêm</span>
+                    </div>
+                </div>
+                <p class="zoom-item__label">Điện thoại flagship</p>
+            </div>
+            <div class="zoom-item">
+                <div class="zoom-item__img-container">
+                    <img src="https://picsum.photos/400/300?random=21" alt="Product 2" class="zoom-item__img" loading="lazy">
+                    <div class="zoom-item__overlay">
+                        <span>Xem thêm</span>
+                    </div>
+                </div>
+                <p class="zoom-item__label">Laptop cao cấp</p>
+            </div>
+            <div class="zoom-item">
+                <div class="zoom-item__img-container">
+                    <img src="https://picsum.photos/400/300?random=22" alt="Product 3" class="zoom-item__img" loading="lazy">
+                    <div class="zoom-item__overlay">
+                        <span>Xem thêm</span>
+                    </div>
+                </div>
+                <p class="zoom-item__label">Phụ kiện gaming</p>
+            </div>
+            <div class="zoom-item">
+                <div class="zoom-item__img-container">
+                    <img src="https://picsum.photos/400/300?random=23" alt="Product 4" class="zoom-item__img" loading="lazy">
+                    <div class="zoom-item__overlay">
+                        <span>Xem thêm</span>
+                    </div>
+                </div>
+                <p class="zoom-item__label">Âm thanh Hi-Fi</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 4: Loading Spinners ===== -->
+    <section class="section" id="spinners">
+        <div class="section__header">
+            <span class="section__number">04</span>
+            <div>
+                <h2 class="section__title">Loading Spinners</h2>
+                <p class="section__desc"><code>@keyframes spin</code> + <code>animation: spin 1s linear infinite</code></p>
+            </div>
+        </div>
+        <div class="spinners-showcase">
+            <div class="spinner-demo">
+                <div class="spinner spinner--simple"></div>
+                <span class="spinner-label">Simple Spinner</span>
+            </div>
+            <div class="spinner-demo">
+                <div class="spinner spinner--dual">
+                    <div class="spinner--dual-inner"></div>
+                </div>
+                <span class="spinner-label">Dual Ring</span>
+            </div>
+            <div class="spinner-demo">
+                <div class="spinner spinner--dots">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+                <span class="spinner-label">Bouncing Dots</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 5: Fade-in Animation ===== -->
+    <section class="section" id="fade-in">
+        <div class="section__header">
+            <span class="section__number">05</span>
+            <div>
+                <h2 class="section__title">Fade-in Animation</h2>
+                <p class="section__desc"><code>@keyframes fadeIn</code>: opacity 0 → 1, translateY(20px) → 0</p>
+            </div>
+        </div>
+        <div class="fadein-showcase">
+            <div class="fadein-block fadein-block--1">
+                <div class="fadein-block__icon">🚀</div>
+                <h3 class="fadein-block__title">Hiệu suất cao</h3>
+                <p class="fadein-block__text">Tối ưu hóa hiệu suất với công nghệ tiên tiến nhất</p>
+            </div>
+            <div class="fadein-block fadein-block--2">
+                <div class="fadein-block__icon">🎨</div>
+                <h3 class="fadein-block__title">Thiết kế đẹp</h3>
+                <p class="fadein-block__text">Giao diện tối giản, hiện đại và thân thiện người dùng</p>
+            </div>
+            <div class="fadein-block fadein-block--3">
+                <div class="fadein-block__icon">🔒</div>
+                <h3 class="fadein-block__title">Bảo mật tốt</h3>
+                <p class="fadein-block__text">Bảo vệ dữ liệu với mã hóa end-to-end hiện đại</p>
+            </div>
+            <div class="fadein-block fadein-block--4">
+                <div class="fadein-block__icon">⚡</div>
+                <h3 class="fadein-block__title">Tốc độ nhanh</h3>
+                <p class="fadein-block__text">Tải trang trong chớp mắt, trải nghiệm mượt mà</p>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

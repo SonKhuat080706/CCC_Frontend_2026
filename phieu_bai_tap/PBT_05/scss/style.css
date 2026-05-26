@@ -1,0 +1,599 @@
+/* ============================================================
+   style.css — Compiled từ SCSS
+   Lệnh: sass scss/style.scss scss/style.css
+   ============================================================ */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #2d2d3a;
+  background-color: #f0f2f5;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ===== HEADER ===== */
+.header {
+  background: #1a1a2e;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+}
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.header__logo {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+}
+
+.header__hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+}
+
+.header__hamburger.active .hamburger-line:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.header__hamburger.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.header__hamburger.active .hamburger-line:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+@media (min-width: 768px) {
+  .header__hamburger {
+    display: none;
+  }
+}
+
+.header__nav {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 75%;
+  max-width: 320px;
+  height: 100vh;
+  background: #16213e;
+  padding: 80px 24px 24px;
+  transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.header__nav.active {
+  right: 0;
+}
+
+@media (min-width: 768px) {
+  .header__nav {
+    position: static;
+    width: auto;
+    height: auto;
+    background: transparent;
+    padding: 0;
+  }
+}
+
+/* ===== NAV ===== */
+.nav__list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 768px) {
+  .nav__list {
+    flex-direction: row;
+    gap: 4px;
+  }
+}
+
+.nav__link {
+  display: block;
+  padding: 16px;
+  color: #ffffff;
+  font-weight: 500;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.nav__link:hover,
+.nav__link--active {
+  background: rgba(233, 69, 96, 0.15);
+  color: #e94560;
+}
+
+/* ===== CARD ===== */
+.card {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+  transform: translateY(-5px);
+}
+
+.card__image-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.card__image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card:hover .card__image {
+  transform: scale(1.05);
+}
+
+.card__badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: #e94560;
+  color: #ffffff;
+  font-size: 0.697rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+}
+
+.card__badge--sale {
+  background: #27ae60;
+}
+
+.card__body {
+  padding: 16px;
+}
+
+.card__title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2d2d3a;
+  margin-bottom: 6px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.card__rating {
+  color: #f5a623;
+  font-size: 0.85rem;
+  margin-bottom: 8px;
+}
+
+.card__price {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #e94560;
+  margin-bottom: 16px;
+}
+
+.card__btn {
+  width: 100%;
+}
+
+.card.featured {
+  border: 2px solid #e94560;
+  position: relative;
+}
+
+.card.featured::before {
+  content: "⭐ Nổi bật";
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #e94560;
+  color: #ffffff;
+  padding: 4px 16px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 0 0 0 12px;
+}
+
+/* ===== BUTTON ===== */
+.btn {
+  display: inline-block;
+  padding: 10px 24px;
+  font-family: "Inter", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn--primary {
+  background: #e94560;
+  color: #ffffff;
+}
+
+.btn--primary:hover {
+  background: #ff6b81;
+  transform: scale(1.03);
+  box-shadow: 0 4px 16px rgba(233, 69, 96, 0.35);
+}
+
+.btn--secondary {
+  background: #0f3460;
+  color: #ffffff;
+}
+
+.btn--secondary:hover {
+  background: #145099;
+  transform: scale(1.03);
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+  display: none;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.sidebar__title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #2d2d3a;
+}
+
+.sidebar__filter-btn {
+  width: 100%;
+  margin-top: 8px;
+}
+
+@media (min-width: 768px) {
+  .sidebar {
+    display: block;
+    padding: 16px 20px;
+    margin-bottom: 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .sidebar {
+    position: sticky;
+    top: 80px;
+    align-self: start;
+    padding: 24px 20px;
+    margin-bottom: 0;
+  }
+}
+
+/* ===== PRODUCT GRID ===== */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 16px;
+}
+
+@media (min-width: 768px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+}
+
+/* ===== ADS BAR ===== */
+.ads-bar {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .ads-bar {
+    display: block;
+    position: sticky;
+    top: 80px;
+    align-self: start;
+  }
+}
+
+.ads-bar__item {
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  color: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.ads-bar__icon {
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.ads-bar__title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.ads-bar__text {
+  font-size: 0.8rem;
+  color: #6b6b80;
+  line-height: 1.5;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background: #1a1a2e;
+  color: #ffffff;
+  margin-top: 48px;
+}
+
+.footer__container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 16px 24px;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 28px;
+}
+
+@media (min-width: 768px) {
+  .footer__container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+    padding: 48px 24px 32px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer__container {
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+    padding: 56px 32px 32px;
+  }
+}
+
+.footer__title {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.footer__text {
+  font-size: 0.85rem;
+  color: #6b6b80;
+  line-height: 1.7;
+}
+
+.footer__links li {
+  padding: 4px 0;
+  font-size: 0.85rem;
+  color: #6b6b80;
+}
+
+.footer__links a {
+  color: #6b6b80;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer__links a:hover {
+  color: #e94560;
+}
+
+.footer__socials {
+  display: flex;
+  gap: 10px;
+}
+
+.footer__bottom {
+  text-align: center;
+  padding: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.8rem;
+  color: #6b6b80;
+}
+
+/* ===== SOCIAL LINK ===== */
+.social-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.social-link:hover {
+  background: #e94560;
+  transform: translateY(-3px);
+}
+
+/* ===== HERO ===== */
+.hero {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #131126 100%);
+  padding: 48px 16px;
+  text-align: center;
+}
+
+.hero__content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.hero__title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+@media (min-width: 768px) {
+  .hero__title {
+    font-size: 2.2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero__title {
+    font-size: 2.8rem;
+  }
+}
+
+.hero__subtitle {
+  color: #6b6b80;
+  font-size: 0.95rem;
+  margin-bottom: 24px;
+}
+
+.hero__cta {
+  display: inline-block;
+  padding: 16px 32px;
+  background: #e94560;
+  color: #ffffff;
+  font-weight: 600;
+  border-radius: 50px;
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero__cta:hover {
+  background: #ff6b81;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(233, 69, 96, 0.4);
+}
+
+.highlight {
+  color: #e94560;
+}
+
+/* ===== CONTENT WRAPPER ===== */
+.content-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+@media (min-width: 1024px) {
+  .content-wrapper {
+    display: grid;
+    grid-template-columns: 240px 1fr 220px;
+    gap: 24px;
+    padding: 32px;
+  }
+}
+
+/* ===== HAMBURGER LINE ===== */
+.hamburger-line {
+  width: 26px;
+  height: 3px;
+  background: #ffffff;
+  border-radius: 2px;
+  transition: 0.3s ease;
+}
+
+/* ===== FILTER ===== */
+.filter-group {
+  margin-bottom: 20px;
+}
+
+.filter-group__title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #6b6b80;
+  margin-bottom: 10px;
+}
+
+.filter-checkbox,
+.filter-radio {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 0;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #2d2d3a;
+}
+
+.filter-checkbox input,
+.filter-radio input {
+  accent-color: #e94560;
+  width: 16px;
+  height: 16px;
+}
+
+/* ===== RATING ===== */
+.rating-count {
+  color: #6b6b80;
+  font-size: 0.78rem;
+}

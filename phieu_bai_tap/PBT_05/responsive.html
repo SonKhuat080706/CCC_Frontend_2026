@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TechStore - Cửa hàng công nghệ hàng đầu Việt Nam. Mua sắm điện thoại, laptop, phụ kiện chính hãng giá tốt.">
+    <title>TechStore — Sản phẩm công nghệ chính hãng</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="responsive.css">
+</head>
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="header" id="header">
+        <div class="header__container">
+            <a href="#" class="header__logo">
+                <span class="logo-icon">⚡</span> TechStore
+            </a>
+
+            <!-- Hamburger button (mobile) -->
+            <button class="header__hamburger" id="hamburger-btn" aria-label="Toggle menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+
+            <!-- Navigation -->
+            <nav class="header__nav" id="main-nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#" class="nav__link nav__link--active">Trang chủ</a></li>
+                    <li class="nav__item"><a href="#products" class="nav__link">Sản phẩm</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">Khuyến mãi</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">Liên hệ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="main">
+        <!-- Hero Banner -->
+        <section class="hero">
+            <div class="hero__content">
+                <h1 class="hero__title">Công nghệ <span class="highlight">đỉnh cao</span></h1>
+                <p class="hero__subtitle">Khám phá bộ sưu tập sản phẩm công nghệ mới nhất với giá ưu đãi đặc biệt</p>
+                <a href="#products" class="hero__cta">Mua sắm ngay →</a>
+            </div>
+        </section>
+
+        <div class="content-wrapper" id="products">
+
+            <!-- SIDEBAR (Filter) -->
+            <aside class="sidebar" id="sidebar">
+                <h2 class="sidebar__title">Bộ lọc</h2>
+
+                <div class="filter-group">
+                    <h3 class="filter-group__title">Danh mục</h3>
+                    <label class="filter-checkbox">
+                        <input type="checkbox" name="category" value="phone"> Điện thoại
+                    </label>
+                    <label class="filter-checkbox">
+                        <input type="checkbox" name="category" value="laptop"> Laptop
+                    </label>
+                    <label class="filter-checkbox">
+                        <input type="checkbox" name="category" value="tablet"> Tablet
+                    </label>
+                    <label class="filter-checkbox">
+                        <input type="checkbox" name="category" value="accessory"> Phụ kiện
+                    </label>
+                </div>
+
+                <div class="filter-group">
+                    <h3 class="filter-group__title">Khoảng giá</h3>
+                    <label class="filter-radio">
+                        <input type="radio" name="price" value="under5m"> Dưới 5 triệu
+                    </label>
+                    <label class="filter-radio">
+                        <input type="radio" name="price" value="5m-15m"> 5 - 15 triệu
+                    </label>
+                    <label class="filter-radio">
+                        <input type="radio" name="price" value="15m-30m"> 15 - 30 triệu
+                    </label>
+                    <label class="filter-radio">
+                        <input type="radio" name="price" value="above30m"> Trên 30 triệu
+                    </label>
+                </div>
+
+                <button class="btn btn--primary sidebar__filter-btn">Áp dụng bộ lọc</button>
+            </aside>
+
+            <!-- PRODUCT GRID -->
+            <section class="product-grid">
+                <!-- Card 1 -->
+                <article class="card">
+                    <div class="card__image-wrapper">
+                        <img src="https://picsum.photos/300/200?random=1" alt="Laptop Gaming Pro" class="card__image" loading="lazy">
+                        <span class="card__badge">HOT</span>
+                    </div>
+                    <div class="card__body">
+                        <h3 class="card__title">Laptop Gaming Pro</h3>
+                        <div class="card__rating">★★★★★ <span class="rating-count">(128)</span></div>
+                        <p class="card__price">25.990.000₫</p>
+                        <button class="btn btn--primary card__btn">Mua ngay</button>
+                    </div>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="card">
+                    <div class="card__image-wrapper">
+                        <img src="https://picsum.photos/300/200?random=2" alt="Tai nghe Bluetooth X3" class="card__image" loading="lazy">
+                        <span class="card__badge card__badge--sale">-30%</span>
+                    </div>
+                    <div class="card__body">
+                        <h3 class="card__title">Tai nghe Bluetooth X3</h3>
+                        <div class="card__rating">★★★★☆ <span class="rating-count">(86)</span></div>
+                        <p class="card__price">1.290.000₫</p>
+                        <button class="btn btn--primary card__btn">Mua ngay</button>
+                    </div>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="card">
+                    <div class="card__image-wrapper">
+                        <img src="https://picsum.photos/300/200?random=3" alt="Điện thoại SmartX 15" class="card__image" loading="lazy">
+                        <span class="card__badge">MỚI</span>
+                    </div>
+                    <div class="card__body">
+                        <h3 class="card__title">Điện thoại SmartX 15</h3>
+                        <div class="card__rating">★★★★★ <span class="rating-count">(245)</span></div>
+                        <p class="card__price">18.490.000₫</p>
+                        <button class="btn btn--primary card__btn">Mua ngay</button>
+                    </div>
+                </article>
+
+                <!-- Card 4 -->
+                <article class="card">
+                    <div class="card__image-wrapper">
+                        <img src="https://picsum.photos/300/200?random=4" alt="Máy tính bảng TabPro" class="card__image" loading="lazy">
+                    </div>
+                    <div class="card__body">
+                        <h3 class="card__title">Máy tính bảng TabPro</h3>
+                        <div class="card__rating">★★★★☆ <span class="rating-count">(62)</span></div>
+                        <p class="card__price">12.990.000₫</p>
+                        <button class="btn btn--primary card__btn">Mua ngay</button>
+                    </div>
+                </article>
+
+                <!-- Card 5 -->
+                <article class="card">
+                    <div class="card__image-wrapper">
+                        <img src="https://picsum.photos/300/200?random=5" alt="Chuột không dây M5" class="card__image" loading="lazy">
+                        <span class="card__badge card__badge--sale">-20%</span>
+                    </div>
+                    <div class="card__body">
+                        <h3 class="card__title">Chuột không dây M5</h3>
+                        <div class="card__rating">★★★★☆ <span class="rating-count">(193)</span></div>
+                        <p class="card__price">590.000₫</p>
+                        <button class="btn btn--primary card__btn">Mua ngay</button>
+                    </div>
+                </article>
+
+                <!-- Card 6 -->
+                <article class="card">
+                    <div class="card__image-wrapper">
+                        <img src="https://picsum.photos/300/200?random=6" alt="Bàn phím cơ K7" class="card__image" loading="lazy">
+                    </div>
+                    <div class="card__body">
+                        <h3 class="card__title">Bàn phím cơ K7</h3>
+                        <div class="card__rating">★★★★★ <span class="rating-count">(74)</span></div>
+                        <p class="card__price">1.890.000₫</p>
+                        <button class="btn btn--primary card__btn">Mua ngay</button>
+                    </div>
+                </article>
+
+                <!-- Card 7 -->
+                <article class="card">
+                    <div class="card__image-wrapper">
+                        <img src="https://picsum.photos/300/200?random=7" alt="Sạc dự phòng 20000mAh" class="card__image" loading="lazy">
+                        <span class="card__badge card__badge--sale">-15%</span>
+                    </div>
+                    <div class="card__body">
+                        <h3 class="card__title">Sạc dự phòng 20000mAh</h3>
+                        <div class="card__rating">★★★★☆ <span class="rating-count">(312)</span></div>
+                        <p class="card__price">490.000₫</p>
+                        <button class="btn btn--primary card__btn">Mua ngay</button>
+                    </div>
+                </article>
+
+                <!-- Card 8 -->
+                <article class="card">
+                    <div class="card__image-wrapper">
+                        <img src="https://picsum.photos/300/200?random=8" alt="Loa Bluetooth Mini" class="card__image" loading="lazy">
+                        <span class="card__badge">MỚI</span>
+                    </div>
+                    <div class="card__body">
+                        <h3 class="card__title">Loa Bluetooth Mini</h3>
+                        <div class="card__rating">★★★★★ <span class="rating-count">(158)</span></div>
+                        <p class="card__price">890.000₫</p>
+                        <button class="btn btn--primary card__btn">Mua ngay</button>
+                    </div>
+                </article>
+            </section>
+
+            <!-- ADS BAR (desktop only) -->
+            <aside class="ads-bar">
+                <div class="ads-bar__item">
+                    <div class="ads-bar__icon">🎁</div>
+                    <h3 class="ads-bar__title">Flash Sale</h3>
+                    <p class="ads-bar__text">Giảm đến 50% các sản phẩm hot nhất tuần</p>
+                </div>
+                <div class="ads-bar__item">
+                    <div class="ads-bar__icon">🚚</div>
+                    <h3 class="ads-bar__title">Miễn phí ship</h3>
+                    <p class="ads-bar__text">Đơn hàng từ 500.000₫ được miễn phí vận chuyển</p>
+                </div>
+                <div class="ads-bar__item">
+                    <div class="ads-bar__icon">🔄</div>
+                    <h3 class="ads-bar__title">Đổi trả 30 ngày</h3>
+                    <p class="ads-bar__text">Cam kết đổi trả miễn phí trong 30 ngày</p>
+                </div>
+            </aside>
+
+        </div>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__section">
+                <h3 class="footer__title">
+                    <span class="logo-icon">⚡</span> TechStore
+                </h3>
+                <p class="footer__text">Cửa hàng công nghệ hàng đầu Việt Nam. Cam kết sản phẩm chính hãng, giá tốt nhất thị trường.</p>
+            </div>
+            <div class="footer__section">
+                <h3 class="footer__title">Liên kết</h3>
+                <ul class="footer__links">
+                    <li><a href="#">Về chúng tôi</a></li>
+                    <li><a href="#">Chính sách bảo hành</a></li>
+                    <li><a href="#">Điều khoản sử dụng</a></li>
+                    <li><a href="#">Hỗ trợ khách hàng</a></li>
+                </ul>
+            </div>
+            <div class="footer__section">
+                <h3 class="footer__title">Liên hệ</h3>
+                <ul class="footer__links">
+                    <li>📍 123 Nguyễn Huệ, Q.1, TP.HCM</li>
+                    <li>📞 1900-1234</li>
+                    <li>✉️ support@techstore.vn</li>
+                </ul>
+            </div>
+            <div class="footer__section">
+                <h3 class="footer__title">Mạng xã hội</h3>
+                <div class="footer__socials">
+                    <a href="#" class="social-link" aria-label="Facebook">FB</a>
+                    <a href="#" class="social-link" aria-label="Instagram">IG</a>
+                    <a href="#" class="social-link" aria-label="YouTube">YT</a>
+                    <a href="#" class="social-link" aria-label="TikTok">TT</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <p>© 2026 TechStore. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Hamburger Toggle Script -->
+    <script>
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const mainNav = document.getElementById('main-nav');
+
+        hamburgerBtn.addEventListener('click', () => {
+            hamburgerBtn.classList.toggle('active');
+            mainNav.classList.toggle('active');
+        });
+
+        // Đóng menu khi click vào link
+        document.querySelectorAll('.nav__link').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburgerBtn.classList.remove('active');
+                mainNav.classList.remove('active');
+            });
+        });
+    </script>
+
+</body>
+</html>

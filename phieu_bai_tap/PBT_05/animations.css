@@ -1,0 +1,537 @@
+/* ============================================================
+   CSS Animations & Transitions Demo
+   5 hiệu ứng: Card hover, Button hover, Image zoom, 
+   Loading spinner, Fade-in
+   ============================================================ */
+
+/* ===== RESET & BASE ===== */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-body: #0f0f23;
+    --bg-card: #1a1a3e;
+    --bg-section: #13132b;
+    --color-accent: #e94560;
+    --color-accent-hover: #ff6b81;
+    --color-secondary: #0f3460;
+    --color-text: #ffffff;
+    --color-text-muted: #8888aa;
+    --color-star: #f5a623;
+    --shadow-card: 0 4px 16px rgba(0, 0, 0, 0.3);
+    --shadow-hover: 0 12px 40px rgba(233, 69, 96, 0.25);
+    --radius: 14px;
+    --radius-sm: 8px;
+    --transition: 0.3s ease;
+    --font: 'Inter', sans-serif;
+}
+
+body {
+    font-family: var(--font);
+    background: var(--bg-body);
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+code {
+    background: rgba(233, 69, 96, 0.15);
+    color: var(--color-accent);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.85em;
+}
+
+/* ===== PAGE HEADER ===== */
+.page-header {
+    text-align: center;
+    padding: 60px 20px 40px;
+    background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 50%, #0f3460 100%);
+}
+
+.page-header__title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+    background: linear-gradient(135deg, #e94560, #ff6b81, #f5a623);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.page-header__subtitle {
+    color: var(--color-text-muted);
+    font-size: 1.05rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ===== SECTION LAYOUT ===== */
+.section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 48px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.section__header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 36px;
+}
+
+.section__number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--color-accent);
+    opacity: 0.3;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.section__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.section__desc {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+}
+
+/* ============================================================
+   HIỆU ỨNG 1: Card Hover
+   - transform: translateY(-8px) + box-shadow tăng
+   - transition: all 0.3s ease
+   ============================================================ */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+    /* === TRANSITION CHÍNH === */
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    /* === HIỆU ỨNG HOVER === */
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+}
+
+.card__img-wrapper {
+    overflow: hidden;
+}
+
+.card__img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.card:hover .card__img {
+    transform: scale(1.05);
+}
+
+.card__content {
+    padding: 18px;
+}
+
+.card__title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.card__price {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    margin-bottom: 14px;
+}
+
+/* ============================================================
+   HIỆU ỨNG 2: Button Hover
+   - Đổi background-color + color mượt mà
+   - transform: scale(1.05)
+   ============================================================ */
+.btn {
+    font-family: var(--font);
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 12px 28px;
+    border: none;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn--buy {
+    width: 100%;
+    background: var(--color-accent);
+    color: var(--color-text);
+}
+
+.btn--buy:hover {
+    background: var(--color-accent-hover);
+    transform: scale(1.05);
+}
+
+.buttons-showcase {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+}
+
+.button-demo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.button-label {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* --- Button Glow --- */
+.btn--glow {
+    background: var(--color-accent);
+    color: var(--color-text);
+    padding: 14px 36px;
+}
+
+.btn--glow:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(233, 69, 96, 0.6),
+                0 0 40px rgba(233, 69, 96, 0.3);
+}
+
+/* --- Button Slide Background --- */
+.btn--slide {
+    background: transparent;
+    color: var(--color-accent);
+    border: 2px solid var(--color-accent);
+    padding: 12px 36px;
+    z-index: 1;
+}
+
+.btn--slide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--color-accent);
+    transition: left 0.4s ease;
+    z-index: -1;
+}
+
+.btn--slide:hover {
+    color: var(--color-text);
+    transform: scale(1.05);
+}
+
+.btn--slide:hover::before {
+    left: 0;
+}
+
+/* --- Button Border Animation --- */
+.btn--border-anim {
+    background: transparent;
+    color: var(--color-text);
+    border: 2px solid transparent;
+    padding: 12px 36px;
+    background-image: linear-gradient(var(--bg-card), var(--bg-card)),
+                      linear-gradient(135deg, var(--color-accent), #f5a623, var(--color-accent));
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+}
+
+.btn--border-anim:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 16px rgba(233, 69, 96, 0.3);
+}
+
+/* --- Button Pulse --- */
+.btn--pulse {
+    background: var(--color-secondary);
+    color: var(--color-text);
+    padding: 14px 36px;
+    animation: pulse-subtle 2s infinite;
+}
+
+.btn--pulse:hover {
+    transform: scale(1.05);
+    animation: none;
+    background: var(--color-accent);
+}
+
+@keyframes pulse-subtle {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(15, 52, 96, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 0 12px rgba(15, 52, 96, 0);
+    }
+}
+
+/* ============================================================
+   HIỆU ỨNG 3: Image Zoom
+   - overflow: hidden trên container
+   - Ảnh transform: scale(1.1) khi hover
+   ============================================================ */
+.zoom-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.zoom-item__img-container {
+    /* === OVERFLOW HIDDEN === */
+    overflow: hidden;
+    border-radius: var(--radius);
+    position: relative;
+    cursor: pointer;
+}
+
+.zoom-item__img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    /* === TRANSITION === */
+    transition: transform 0.5s ease;
+}
+
+.zoom-item__img-container:hover .zoom-item__img {
+    /* === ZOOM EFFECT === */
+    transform: scale(1.1);
+}
+
+.zoom-item__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(233, 69, 96, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    color: var(--color-text);
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+.zoom-item__img-container:hover .zoom-item__overlay {
+    opacity: 1;
+}
+
+.zoom-item__label {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+}
+
+/* ============================================================
+   HIỆU ỨNG 4: Loading Spinners
+   - @keyframes spin
+   - animation: spin 1s linear infinite
+   ============================================================ */
+.spinners-showcase {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 60px;
+}
+
+.spinner-demo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+}
+
+.spinner-label {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* --- Simple Spinner --- */
+.spinner--simple {
+    width: 48px;
+    height: 48px;
+    border: 4px solid rgba(255, 255, 255, 0.1);
+    border-top: 4px solid var(--color-accent);
+    border-radius: 50%;
+    /* === ANIMATION CHÍNH === */
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* --- Dual Ring --- */
+.spinner--dual {
+    width: 48px;
+    height: 48px;
+    border: 4px solid rgba(255, 255, 255, 0.1);
+    border-top: 4px solid var(--color-accent);
+    border-bottom: 4px solid #f5a623;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    position: relative;
+}
+
+.spinner--dual-inner {
+    position: absolute;
+    inset: 4px;
+    border: 3px solid rgba(255, 255, 255, 0.05);
+    border-left: 3px solid var(--color-accent-hover);
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite reverse;
+}
+
+/* --- Bouncing Dots --- */
+.spinner--dots {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    height: 48px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background: var(--color-accent);
+    border-radius: 50%;
+    animation: bounce 1.2s ease-in-out infinite;
+}
+
+.dot:nth-child(2) {
+    animation-delay: 0.2s;
+    background: var(--color-accent-hover);
+}
+
+.dot:nth-child(3) {
+    animation-delay: 0.4s;
+    background: #f5a623;
+}
+
+@keyframes bounce {
+    0%, 80%, 100% {
+        transform: scale(0.6);
+        opacity: 0.5;
+    }
+    40% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+}
+
+/* ============================================================
+   HIỆU ỨNG 5: Fade-in khi load
+   - @keyframes fadeIn
+   - opacity: 0; transform: translateY(20px)
+   → opacity: 1; transform: translateY(0)
+   ============================================================ */
+.fadein-showcase {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 20px;
+}
+
+.fadein-block {
+    background: var(--bg-card);
+    padding: 32px 24px;
+    border-radius: var(--radius);
+    text-align: center;
+    box-shadow: var(--shadow-card);
+    /* === FADE-IN ANIMATION === */
+    animation: fadeIn 0.8s ease forwards;
+    opacity: 0;
+}
+
+/* Staggered delay — hiệu ứng xuất hiện lần lượt */
+.fadein-block--1 { animation-delay: 0.1s; }
+.fadein-block--2 { animation-delay: 0.3s; }
+.fadein-block--3 { animation-delay: 0.5s; }
+.fadein-block--4 { animation-delay: 0.7s; }
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fadein-block__icon {
+    font-size: 2.5rem;
+    margin-bottom: 14px;
+}
+
+.fadein-block__title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.fadein-block__text {
+    font-size: 0.88rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+    .page-header__title {
+        font-size: 1.8rem;
+    }
+
+    .section__number {
+        font-size: 1.8rem;
+    }
+
+    .section__title {
+        font-size: 1.2rem;
+    }
+
+    .spinners-showcase {
+        gap: 36px;
+    }
+}
