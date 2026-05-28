@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Đoán số</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background: #f0f4f8;
+      }
+      .card {
+        background: white;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        max-width: 400px;
+        width: 100%;
+      }
+      h1 {
+        margin-bottom: 8px;
+      }
+      p {
+        color: #666;
+        margin-bottom: 24px;
+      }
+      button {
+        background: #4f46e5;
+        color: white;
+        border: none;
+        padding: 12px 32px;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      button:hover {
+        background: #4338ca;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h1>🎯 Đoán Số</h1>
+      <p>Máy chọn 1 số từ 1-100. Bạn có 7 lượt đoán.</p>
+      <button onclick="startGame()">Bắt đầu chơi</button>
+    </div>
+    <script src="guess.js"></script>
+  </body>
+</html>
