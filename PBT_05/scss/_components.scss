@@ -1,0 +1,137 @@
+// SCSS Components
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: $spacing-md;
+    background: $secondary-color;
+    color: $white;
+
+    .logo {
+        font-size: 22px;
+        font-weight: 800;
+    }
+
+    .hamburger {
+        @include flex-center;
+        width: 42px;
+        height: 42px;
+        border: 1px solid #334155;
+        border-radius: $radius-md;
+        background: #1e293b;
+        color: $white;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    .main-nav {
+        display: none;
+
+        a {
+            color: $white;
+            text-decoration: none;
+            font-weight: 600;
+
+            &:hover {
+                color: #bfdbfe;
+            }
+        }
+    }
+
+    @include respond-to(tablet) {
+        padding: 18px $spacing-lg;
+
+        .hamburger {
+            display: none;
+        }
+
+        .main-nav {
+            display: flex;
+            gap: 24px;
+        }
+    }
+}
+
+.card-base {
+    overflow: hidden;
+    border-radius: $radius-lg;
+    background: $white;
+    border: 1px solid $border-color;
+}
+
+.product-card {
+    @extend .card-base;
+    @include card-shadow;
+    display: flex;
+    flex-direction: column;
+
+    img {
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        object-fit: cover;
+    }
+
+    .product-info {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        padding: $spacing-md;
+
+        h3 {
+            margin: 0 0 $spacing-sm;
+            font-size: 20px;
+        }
+
+        p {
+            margin: 0 0 12px;
+            color: $muted-color;
+        }
+
+        strong {
+            display: block;
+            margin-bottom: 14px;
+            color: $accent-color;
+            font-size: 18px;
+        }
+
+        button {
+            margin-top: auto;
+            width: 100%;
+            border: 0;
+            border-radius: $radius-md;
+            padding: 12px $spacing-md;
+            background: $primary-color;
+            color: $white;
+            font-weight: 700;
+            cursor: pointer;
+
+            &:hover {
+                background: #1d4ed8;
+            }
+        }
+    }
+
+    &.featured {
+        border-color: $primary-color;
+    }
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-md;
+
+    @include respond-to(tablet) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    @include respond-to(desktop) {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+    }
+}

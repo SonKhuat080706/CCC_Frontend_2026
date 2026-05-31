@@ -1,0 +1,263 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f8fafc;
+    color: #0f172a;
+    font-size: 16px;
+}
+
+@media (min-width: 768px) {
+    body {
+        font-size: 17px;
+    }
+}
+
+@media (min-width: 1024px) {
+    body {
+        font-size: 18px;
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    background: #0f172a;
+    color: #ffffff;
+}
+
+.site-header .logo {
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.site-header .hamburger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border: 1px solid #334155;
+    border-radius: 10px;
+    background: #1e293b;
+    color: #ffffff;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.site-header .main-nav {
+    display: none;
+}
+
+.site-header .main-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.site-header .main-nav a:hover {
+    color: #bfdbfe;
+}
+
+@media (min-width: 768px) {
+    .site-header {
+        padding: 18px 32px;
+    }
+
+    .site-header .hamburger {
+        display: none;
+    }
+
+    .site-header .main-nav {
+        display: flex;
+        gap: 24px;
+    }
+}
+
+.card-base,
+.product-card {
+    overflow: hidden;
+    border-radius: 16px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+}
+
+.product-card {
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card:hover {
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.16);
+    transform: translateY(-6px);
+}
+
+.product-card img {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+}
+
+.product-card .product-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 16px;
+}
+
+.product-card .product-info h3 {
+    margin: 0 0 8px;
+    font-size: 20px;
+}
+
+.product-card .product-info p {
+    margin: 0 0 12px;
+    color: #64748b;
+}
+
+.product-card .product-info strong {
+    display: block;
+    margin-bottom: 14px;
+    color: #dc2626;
+    font-size: 18px;
+}
+
+.product-card .product-info button {
+    margin-top: auto;
+    width: 100%;
+    border: 0;
+    border-radius: 10px;
+    padding: 12px 16px;
+    background: #2563eb;
+    color: #ffffff;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.product-card .product-info button:hover {
+    background: #1d4ed8;
+}
+
+.product-card.featured {
+    border-color: #2563eb;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+}
+
+@media (min-width: 768px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .product-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+    }
+}
+
+.page-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    width: min(100%, 1320px);
+    margin: 0 auto;
+    padding: 20px 16px;
+}
+
+@media (min-width: 768px) {
+    .page-layout {
+        padding: 28px 32px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .page-layout {
+        grid-template-columns: 240px 1fr 220px;
+        align-items: start;
+        gap: 24px;
+        padding: 32px 40px;
+    }
+}
+
+.sidebar,
+.ads-bar {
+    display: none;
+}
+
+@media (min-width: 1024px) {
+    .sidebar,
+    .ads-bar {
+        display: block;
+        position: sticky;
+        top: 96px;
+        padding: 20px;
+        border-radius: 16px;
+        background: #ffffff;
+        box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+    }
+}
+
+.section-heading {
+    margin-bottom: 20px;
+}
+
+.section-heading .eyebrow {
+    margin: 0 0 6px;
+    color: #2563eb;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.section-heading h1 {
+    margin: 0 0 8px;
+    font-size: 28px;
+    line-height: 1.15;
+}
+
+@media (min-width: 768px) {
+    .section-heading h1 {
+        font-size: 36px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .section-heading h1 {
+        font-size: 42px;
+    }
+}
+
+.section-heading p {
+    margin: 0;
+    color: #64748b;
+}
+
+.site-footer {
+    padding: 24px 16px;
+    background: #0f172a;
+    color: #cbd5e1;
+    text-align: center;
+}

@@ -1,0 +1,163 @@
+/* PBT05 - CSS Transitions & Animations */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f8fafc;
+    color: #0f172a;
+}
+
+.hero {
+    padding: 64px 20px;
+    background: linear-gradient(135deg, #0f172a, #2563eb);
+    color: #ffffff;
+    text-align: center;
+}
+
+.hero h1 {
+    margin: 0 0 12px;
+    font-size: clamp(32px, 5vw, 56px);
+}
+
+.hero p {
+    max-width: 720px;
+    margin: 0 auto;
+    color: #dbeafe;
+}
+
+.container {
+    width: min(1120px, 100%);
+    margin: 0 auto;
+    padding: 32px 16px;
+}
+
+.demo-section {
+    margin-bottom: 40px;
+    padding: 24px;
+    border-radius: 18px;
+    background: #ffffff;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.product-card {
+    overflow: hidden;
+    border-radius: 16px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+    transition: all 0.3s ease;
+}
+
+/* 1. Card hover effect */
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.18);
+}
+
+/* 3. Image zoom */
+.image-wrap {
+    overflow: hidden;
+}
+
+.image-wrap img {
+    display: block;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover .image-wrap img {
+    transform: scale(1.1);
+}
+
+.card-body {
+    padding: 18px;
+}
+
+.card-body h3 {
+    margin: 0 0 8px;
+}
+
+.card-body p {
+    margin: 0 0 16px;
+    color: #64748b;
+}
+
+/* 2. Button hover */
+.buy-button {
+    border: 2px solid #2563eb;
+    border-radius: 999px;
+    padding: 12px 18px;
+    background-color: #2563eb;
+    color: #ffffff;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.buy-button:hover {
+    background-color: #ffffff;
+    color: #2563eb;
+    transform: scale(1.05);
+}
+
+/* 4. Loading spinner */
+.spinner-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.spinner {
+    width: 54px;
+    height: 54px;
+    border: 6px solid #dbeafe;
+    border-top-color: #2563eb;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* 5. Fade-in CSS only */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.8s ease forwards;
+}
+
+.demo-section:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.demo-section:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (min-width: 768px) {
+    .card-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

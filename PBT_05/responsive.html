@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PBT05 - Responsive Product Page</title>
+    <link rel="stylesheet" href="responsive.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="logo">TechStore</div>
+
+        <button class="hamburger" aria-label="Open menu">☰</button>
+
+        <nav class="main-nav" aria-label="Main navigation">
+            <a href="#">Trang chủ</a>
+            <a href="#products">Sản phẩm</a>
+            <a href="#">Khuyến mãi</a>
+            <a href="#">Liên hệ</a>
+        </nav>
+    </header>
+
+    <main class="page-layout">
+        <aside class="sidebar">
+            <h2>Bộ lọc</h2>
+
+            <div class="filter-group">
+                <label for="category">Danh mục</label>
+                <select id="category">
+                    <option>Tất cả</option>
+                    <option>Điện thoại</option>
+                    <option>Laptop</option>
+                    <option>Phụ kiện</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label for="price">Khoảng giá</label>
+                <select id="price">
+                    <option>Tất cả</option>
+                    <option>Dưới 5 triệu</option>
+                    <option>5 - 15 triệu</option>
+                    <option>Trên 15 triệu</option>
+                </select>
+            </div>
+
+            <button class="filter-button">Áp dụng</button>
+        </aside>
+
+        <section id="products" class="content">
+            <div class="section-heading">
+                <p class="eyebrow">Sản phẩm nổi bật</p>
+                <h1>Responsive Product Grid</h1>
+                <p>Mobile 1 cột, tablet 2 cột, desktop 4 cột.</p>
+            </div>
+
+            <div class="product-grid">
+                <article class="product-card">
+                    <img src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab?q=80&w=800&auto=format&fit=crop" alt="iPhone">
+                    <div class="product-info">
+                        <h3>iPhone 16</h3>
+                        <p>Điện thoại cao cấp, camera đẹp.</p>
+                        <strong>25.990.000đ</strong>
+                        <button>Mua ngay</button>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=800&auto=format&fit=crop" alt="MacBook">
+                    <div class="product-info">
+                        <h3>MacBook Pro</h3>
+                        <p>Laptop mạnh cho học tập, làm việc.</p>
+                        <strong>45.990.000đ</strong>
+                        <button>Mua ngay</button>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <img src="https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1?q=80&w=800&auto=format&fit=crop" alt="AirPods">
+                    <div class="product-info">
+                        <h3>AirPods Pro</h3>
+                        <p>Tai nghe chống ồn, âm thanh tốt.</p>
+                        <strong>6.990.000đ</strong>
+                        <button>Mua ngay</button>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <img src="https://images.unsplash.com/photo-1589739900243-4b52cd9b104e?q=80&w=800&auto=format&fit=crop" alt="iPad">
+                    <div class="product-info">
+                        <h3>iPad Air</h3>
+                        <p>Máy tính bảng gọn nhẹ.</p>
+                        <strong>16.990.000đ</strong>
+                        <button>Mua ngay</button>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <img src="https://images.unsplash.com/photo-1587829741301-dc798b83add3?q=80&w=800&auto=format&fit=crop" alt="Keyboard">
+                    <div class="product-info">
+                        <h3>Keyboard RGB</h3>
+                        <p>Bàn phím cơ cho học tập và gaming.</p>
+                        <strong>1.590.000đ</strong>
+                        <button>Mua ngay</button>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <img src="https://images.unsplash.com/photo-1527814050087-3793815479db?q=80&w=800&auto=format&fit=crop" alt="Mouse">
+                    <div class="product-info">
+                        <h3>Wireless Mouse</h3>
+                        <p>Chuột không dây nhẹ, pin lâu.</p>
+                        <strong>790.000đ</strong>
+                        <button>Mua ngay</button>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?q=80&w=800&auto=format&fit=crop" alt="Headphone">
+                    <div class="product-info">
+                        <h3>Headphone X</h3>
+                        <p>Tai nghe over-ear âm bass mạnh.</p>
+                        <strong>2.490.000đ</strong>
+                        <button>Mua ngay</button>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <img src="https://images.unsplash.com/photo-1616348436168-de43ad0db179?q=80&w=800&auto=format&fit=crop" alt="Samsung">
+                    <div class="product-info">
+                        <h3>Samsung S24</h3>
+                        <p>Android flagship, màn hình đẹp.</p>
+                        <strong>22.990.000đ</strong>
+                        <button>Mua ngay</button>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <aside class="ads-bar">
+            <h2>Ưu đãi</h2>
+            <p>Miễn phí vận chuyển cho đơn từ 500.000đ.</p>
+            <p>Giảm 10% phụ kiện khi mua kèm laptop.</p>
+        </aside>
+    </main>
+
+    <footer class="site-footer">
+        <p>© 2026 TechStore. Responsive layout demo.</p>
+    </footer>
+
+</body>
+</html>
