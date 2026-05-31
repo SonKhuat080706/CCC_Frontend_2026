@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App - Dự báo thời tiết hiện đại</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header>
+            <h1 id="app-title"><i class="fa-solid fa-cloud-sun-rain"></i> SKYGLANCE</h1>
+            <p class="subtitle">Tra cứu thời tiết thời gian thực toàn cầu</p>
+        </header>
+
+        <!-- Search Bar -->
+        <div class="search-section">
+            <form id="search-form" class="search-bar">
+                <input type="text" id="city-input" placeholder="Nhập tên thành phố (vd: Hanoi, Tokyo...)" required autocomplete="off">
+                <button type="submit" id="search-btn">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </form>
+        </div>
+
+        <!-- History Section -->
+        <div class="history-section" id="history-section">
+            <span class="history-label">Tìm kiếm gần đây:</span>
+            <div class="history-tags" id="history-tags">
+                <!-- Dynamically populated tags -->
+            </div>
+        </div>
+
+        <!-- Main Display Card -->
+        <main class="weather-card" id="weather-card">
+            <!-- Initial State / Loading State / Success State / Error State will render here dynamically -->
+            <div class="initial-state">
+                <i class="fa-solid fa-wind weather-promo-icon"></i>
+                <h3>Bắt đầu khám phá</h3>
+                <p>Nhập tên thành phố để xem thông tin thời tiết chi tiết.</p>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

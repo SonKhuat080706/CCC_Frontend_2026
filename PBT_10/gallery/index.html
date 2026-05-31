@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinite Scroll Gallery - Thư viện ảnh vô tận</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-wrapper">
+        <!-- Header -->
+        <header class="gallery-header">
+            <h1><i class="fa-regular fa-images"></i> VISUALS</h1>
+            <p>Cuộn xuống để khám phá kho tàng ảnh bất tận từ Lorem Picsum</p>
+        </header>
+
+        <!-- Gallery Grid -->
+        <main class="gallery-grid" id="gallery-grid">
+            <!-- Images will render here dynamically -->
+        </main>
+
+        <!-- Loading Trigger / Loader Indicator -->
+        <div id="load-trigger" class="load-trigger">
+            <div class="loader-circle"></div>
+            <span>Đang tải thêm tác phẩm nghệ thuật...</span>
+        </div>
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightbox-close">&times;</button>
+        <div class="lightbox-content">
+            <img id="lightbox-img" src="" alt="Full size image">
+            <div class="lightbox-info">
+                <span id="lightbox-author">Tác giả</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
