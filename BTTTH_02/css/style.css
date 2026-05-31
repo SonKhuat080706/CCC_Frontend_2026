@@ -1,0 +1,58 @@
+
+:root{
+    --bs-primary:#14b8a6;
+    --bs-primary-rgb:20,184,166;
+    --bs-secondary:#64748b;
+}
+
+body{
+    font-family: Arial, sans-serif;
+}
+
+.py-section{
+    padding-top:5rem;
+    padding-bottom:5rem;
+}
+
+.hero-section{
+    min-height:100vh;
+    background:
+    linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)),
+    url('https://picsum.photos/1600/900?10');
+    background-size:cover;
+    background-position:center;
+}
+
+.card{
+    border-radius:16px;
+    border:none;
+}
+
+.btn{
+    border-radius:8px;
+}
+
+.form-control{
+    border-radius:10px;
+}
+
+.avatar{
+    width:60px;
+    height:60px;
+    object-fit:cover;
+}
+
+.reply-comment{
+    margin-left:40px;
+}
+
+@media (max-width:768px){
+
+    .hero-section h1{
+        font-size:3rem;
+    }
+
+    .reply-comment{
+        margin-left:10px;
+    }
+}
